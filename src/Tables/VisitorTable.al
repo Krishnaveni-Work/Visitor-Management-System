@@ -35,23 +35,25 @@ table 50104 "Visitor Table"
             DataClassification = ToBeClassified;
             Caption = 'Contact Number';
 
-            // trigger OnValidate()
-            // var
-            //     i: Integer;
-            // begin
-            //     if StrLen("Contact Number") <> 10 then
-            //         Error('Contact Number must be 10 digits long.');
-            //     for i := 1 to StrLen("Contact Number") do begin
-            //         if not IsNumeric(CopyStr("Contact Number", i, 1)) then
-            //             Error('Contact Number must contain only digits.');
-            //     end;
-            // end;
+            trigger OnValidate()
+            var
+                i: Integer;
+            begin
+                if StrLen("Contact Number") <> 10 then
+                    Error('Contact Number must be 10 digits long.');
+                for i := 1 to StrLen("Contact Number") do begin
+                    if not ("Contact Number"[i] in ['0' .. '9'])
+                    then
+                        Error('Contact Number must contain only digits.');
+                end;
+            end;
         }
 
         field(5; "Visit Purpose"; Text[50])
         {
             DataClassification = ToBeClassified;
             caption = 'Visit Purpose';
+
         }
     }
 

@@ -22,6 +22,7 @@ table 50105 "Visit Log Table"
             DataClassification = ToBeClassified;
             Caption = 'Visitor ID';
             TableRelation = "Visitor Table"."Visitor ID";
+            NotBlank = true;
         }
 
         field(3; "Visit Date"; DateTime)
