@@ -15,12 +15,16 @@ page 50105 "Visitor Card Page"
                 {
                     ApplicationArea = All;
                     Caption = 'Visitor ID';
+                    ToolTip = 'Unique identifier for the visitor.';
+                    NotBlank = true;
+                    Editable = false;
                 }
 
                 field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
                     Caption = 'Name';
+
                 }
 
                 field("Company Name"; Rec."Company Name")
