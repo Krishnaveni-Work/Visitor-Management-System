@@ -1,30 +1,27 @@
-page 50105 "Visitor Card Page"
+page 50114 "Visitor List Page"
 {
-    PageType = Card;
+    PageType = List;
     ApplicationArea = All;
-    UsageCategory = None;
+    UsageCategory = Lists;
     SourceTable = "Visitor Table";
 
     layout
     {
         area(Content)
         {
-            group("Visitor Card Page")
+            repeater("Visitor List Page")
+
             {
                 field("Visitor ID"; Rec."Visitor ID")
                 {
                     ApplicationArea = All;
                     Caption = 'Visitor ID';
-                    ToolTip = 'Unique identifier for the visitor.';
-                    NotBlank = true;
-                    Editable = false;
                 }
 
                 field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
                     Caption = 'Name';
-
                 }
 
                 field("Company Name"; Rec."Company Name")
@@ -44,7 +41,6 @@ page 50105 "Visitor Card Page"
                     ApplicationArea = All;
                     Caption = 'Visit Purpose';
                 }
-
             }
         }
     }
